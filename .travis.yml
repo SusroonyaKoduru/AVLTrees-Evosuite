@@ -1,2 +1,9 @@
 language: java
-script: "mvn test"
+
+install:
+    - sudo apt-get update
+    - sudo apt-get install build-essential
+    - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+script:
+    - mvn compile
